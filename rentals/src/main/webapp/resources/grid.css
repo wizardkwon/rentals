@@ -1,0 +1,93 @@
+@charset "UTF-8";
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+	display : grid;
+	grid-template-rows: 120px 50px auto 100px;
+	height: 100vh;
+}
+
+header {
+	background-color: #4cb2e9;
+}
+
+nav {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	background-color: #99d7ff
+}
+
+section {
+	background-color: #e7f9ff;
+}
+.mainSection {
+	border: solid 2px;
+	text-align: center;
+	background-color: #f3ff90;
+}
+.main_img{
+	border: solid 1px;
+	text-align: center;
+	padding-top: 10px;
+}
+footer {
+	color: black;
+	background-color: #4cb2e9;
+}
+h1, h2 {
+	text-align: center;
+}
+h1{
+	font-family: fantasy;
+	margin-top: 40px;
+}
+h2 {
+	margin-top: 20px;
+}
+
+ul {
+	display : flex;
+	list-style: none;
+}
+li {
+	padding: 0 20px;
+}
+footer>p{
+	text-align: center;
+	margin-top: 20px;
+}
+table {
+	margin-top : 30px;
+	border: 1px solid grey;
+	border-collapse : collapse;
+}
+td>input {
+	margin: 20px auto;
+	outline: none;
+}
+th, td {
+	padding: 2px 10px;
+	text-align: center;
+}
+a {
+	text-decoration:none;
+	cursor:pointer;
+	color:black;
+}
+form{
+	display: flex;
+	flex-direction:column;
+	justify-content: center;
+	
+	width: fit-content;
+	margin: auto;
+}
+
+.main_log {
+	color:blue;
+	font-family: fantasy;
+}
