@@ -3,6 +3,8 @@ package controller;
 import controller.action.JoinAction;
 import controller.action.LoginAction;
 import controller.action.LogoutAction;
+import controller.action.SearchAction;
+import controller.action.SearchVenueAction;
 import controller.action.VenueJoinAction;
 
 public class ActionFactory {
@@ -23,8 +25,12 @@ public class ActionFactory {
 			action = new LoginAction();
 		}else if(command.equals("logout")) {
 			action = new LogoutAction();
-		}else if(command.equals("venue")) {
+		}else if(command.equals("venue_join")) {
 			action = new VenueJoinAction();
+		}else if(command.equals("search")) {
+			action = new SearchAction();
+		} else if(command.equals("searchvenue")) {
+			action = new SearchVenueAction();
 		}
 		return action;
 	}

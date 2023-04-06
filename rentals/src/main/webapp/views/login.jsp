@@ -14,21 +14,21 @@
 	<div class="login_box">
 		<form method="POST" action="../service">
 			<input type="hidden" name="command" value="login">
-			<table>
+			<table class="TEST">
 				<tr>
-					<td><h3>ID</h3></td>
-					<td><input type="text" id="clientId" name="clientId" placeholder="아이디를 입력하시오"></td>
+					<td class="KEY"><h3>ID</h3></td>
+					<td class="VALUE"><input type="text" id="clientId" name="clientId" placeholder="아이디를 입력하시오"></td>
 				</tr>
 				<tr>
-					<td><h3>PASSWORD</h3></td>
-					<td><input type="password" id="clientPassword" name="clientPassword"  placeholder="비밀번호를 입력하시오"></td>
+					<td class="KEY"><h3>PASSWORD</h3></td>
+					<td  class="VALUE"><input type="password" id="clientPassword" name="clientPassword"  placeholder="비밀번호를 입력하시오"></td>
 				</tr>
 			</table>
 			<input type="button" value="로그인" onclick="checkLogin(form)">
 		</form>
 	</div>
 	</section>
-	<script src="../resources/validation.js"></script>
+	<script src="../resources/client_login.js"></script>
 </body>
 <jsp:include page="footer"></jsp:include>
 </html>

@@ -1,29 +1,29 @@
 package controller.action;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import controller.Action;
-import venue.VenueDto;
+import venue.Venue;
 import venue.controller.VenueDao;
 
-public class VenueJoinAction implements Action{
+public class SearchAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		
-		String venueId = request.getParameter("venueId");
-		String venueName = request.getParameter("venueName");
-		String dateTime = request.getParameter("dateTime");
-		VenueDao venueDao = VenueDao.getInstance();
-		VenueDto venueDto = new VenueDto(venueId,venueName,dateTime);
-		venueDao.joinVenue(venueDto);
-		
+		String search = request.getParameter("search");
+		VenueDao venue = VenueDao.getInstance();
+		ArrayList<Venue> list = venue.getVenueSearch(search);
 		response.sendRedirect("venue_info");
+		for(int i=0;i<list.size();i++) {
+			System.out.println(list.get(i).getVenueName());
+		}
 	}
 
 }

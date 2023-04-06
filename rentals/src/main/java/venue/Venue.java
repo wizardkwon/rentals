@@ -1,7 +1,5 @@
 package venue;
 
-
-
 public class Venue {
 	private String venueId;
 	private String venueName;
@@ -11,6 +9,7 @@ public class Venue {
 		this.venueId = venueId;
 		this.venueName = venueName;
 		this.dateTime = dateTime;
+		
 	}
 	public Venue(VenueDto venueDto) {
 		this.venueId = venueDto.getVenueId();

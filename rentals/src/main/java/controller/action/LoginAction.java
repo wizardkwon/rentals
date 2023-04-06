@@ -4,13 +4,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
 import client.Client;
-import client.ClientDto;
 import client.controller.ClientDao;
 import controller.Action;
 
@@ -24,9 +21,6 @@ public class LoginAction implements Action {
 		String clientId = request.getParameter("clientId");
 		String clientPassword = request.getParameter("clientPassword");
 	
-
-//		Client clientLog = new Client(clientId,clientPassword);
-		
 		ClientDao client = ClientDao.getInstance();
 		ArrayList<Client> list = client.getClientAll();
 		HttpSession session = null;
@@ -43,7 +37,7 @@ public class LoginAction implements Action {
 			System.out.println("로그인성공");
 			
 			Client whoIsLog = (Client)session.getAttribute("log");
-			System.out.println(whoIsLog.getClientId());
+			
 			if(whoIsLog.getClientId().equals("admin")) {
 				response.sendRedirect("admin_menu");
 			}else {

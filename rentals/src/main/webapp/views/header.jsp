@@ -6,16 +6,17 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="/resources/grid.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 </head>
 <body>
  <header>
- 	<h1> THIS IS FOR RENTALS </h1>
+ 	<h1><a href="index">THIS IS FOR RENTALS</a> </h1>
  </header>
  <nav>
  <div class="nav_menu">
  	<ul>
- 		<li><a href="car_info">차량정보</a></li>
- 		<li><a href="car_info">공지사항</a></li>
+ 		<li><a href="vehicle_info">차량정보</a></li>
+ 		<li><a href="notice">공지사항</a></li>
  	</ul>
  	<ul>
  		<li><a href="join">회원가입</a></li>

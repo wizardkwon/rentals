@@ -26,25 +26,25 @@ String clientName = request.getParameter("clientName");
 <h3 style="text-align: center">회원 정보 입력</h3>
 	<form method="POST" action="../service">
 	<input type="hidden" name="command" value="join">
-		<table>
+		<table class="TEST">
 			<tr>
-				<td>ID</td>
-				<td><input type="text" id="clientId" name="clientId" value="<%=clientId != null ? clientId : ""%>"
-				<%=clientId == null ? "autofocus" : ""%>></td>
+				<td  class="KEY">ID</td>
+				<td  class="VALUE"><input type="text" id="clientId" name="clientId" value="<%=clientId != null ? clientId : ""%>"
+				<%=clientId == null ? "autofocus" : ""%> placeholder="아이디를 입력하시오"></td>
 			</tr>
 			<tr>
-				<td>PASSWORD</td>
-				<td><input type="password" id="clientPassword" name="clientPassword" value="<%=clientPassword != null ? clientPassword : ""%>"
-				<%=clientPassword == null ? "autofocus" : ""%>></td>
+				<td  class="KEY">PASSWORD</td>
+				<td  class="VALUE"><input type="password" id="clientPassword" name="clientPassword" value="<%=clientPassword != null ? clientPassword : ""%>"
+				<%=clientPassword == null ? "autofocus" : ""%> placeholder="비밀번호를 입력하시오"></td>
 			</tr>
 			<tr>
-				<td>NAME</td>
-				<td><input type="text" id="clientName" name="clientName" value="<%=clientName != null ? clientName : ""%>"
-				<%=clientName == null ? "autofocus" : ""%>></td>
+				<td  class="KEY">NAME</td>
+				<td  class="VALUE"><input type="text" id="clientName" name="clientName" value="<%=clientName != null ? clientName : ""%>"
+				<%=clientName == null ? "autofocus" : ""%> placeholder="성명을 입력하시오"></td>
 			</tr>
 			<tr>
-				<td>가입일자</td>
-				<td><input type="date" id="dateTime" name="dateTime" value="<%=dateTime %>"></td>
+				<td  class="KEY">가입일자</td>
+				<td  class="VALUE"><input type="date" id="dateTime" name="dateTime" value="<%=dateTime %>"></td>
 			</tr>
 			
 		</table>
