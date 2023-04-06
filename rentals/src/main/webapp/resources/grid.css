@@ -20,6 +20,40 @@ nav {
 	justify-content: center;
 	background-color: #99d7ff
 }
+.nav_menu{
+	display: flex;
+	flex-direction: rows;
+	justify-content: space-around;
+}
+.client_menu {
+	display: flex;
+	flex-direction: rows;
+	justify-content: space-around;
+	font-size: 20px;
+}
+.admin_menu {
+	align-items: baseline;
+	display: flex;
+	flex-direction: rows;
+	justify-content: space-evenly;
+	padding-top: 50px;
+	text-align: center;
+}
+.venuejoin{
+	display: flex;
+	text-align: center;
+	flex-direction: rows;
+	justify-content: space-evenly;
+    padding-top: 50px;
+}
+.venuejoin>button{
+	 width: 115px;
+    height: 64px;
+    background-color: #0042a5;
+    color: white;
+    font-size: x-large;
+    border-radius: 30%;
+}
 
 section {
 	background-color: #e7f9ff;
@@ -28,11 +62,12 @@ section {
 	border: solid 2px;
 	text-align: center;
 	background-color: #f3ff90;
+	padding-bottom: 20px;
 }
 .main_img{
 	border: solid 1px;
 	text-align: center;
-	padding-top: 10px;
+	padding: 50px;
 }
 footer {
 	color: black;
@@ -52,6 +87,8 @@ h2 {
 ul {
 	display : flex;
 	list-style: none;
+	justify-content: center;
+	font-size: x-large;
 }
 li {
 	padding: 0 20px;
@@ -64,6 +101,8 @@ table {
 	margin-top : 30px;
 	border: 1px solid grey;
 	border-collapse : collapse;
+	background-color: #77c0ff
+
 }
 td>input {
 	margin: 20px auto;

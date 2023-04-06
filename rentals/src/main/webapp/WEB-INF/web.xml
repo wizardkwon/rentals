@@ -43,6 +43,25 @@
 	</servlet-mapping>
 	
 	<servlet>
+		<servlet-name>venue_join</servlet-name>
+		<jsp-file>/views/venue_join.jsp</jsp-file>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>venue_join</servlet-name>
+		<url-pattern>/venue_join</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>venue_info</servlet-name>
+		<jsp-file>/views/venue_info.jsp</jsp-file>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>venue_info</servlet-name>
+		<url-pattern>/venue_info</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
 		<servlet-name>client_menu</servlet-name>
 		<jsp-file>/views/client_menu.jsp</jsp-file>
 	</servlet>
@@ -50,6 +69,16 @@
 	<servlet-mapping>
 		<servlet-name>client_menu</servlet-name>
 		<url-pattern>/client_menu</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>admin_menu</servlet-name>
+		<jsp-file>/views/admin_menu.jsp</jsp-file>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>admin_menu</servlet-name>
+		<url-pattern>/admin_menu</url-pattern>
 	</servlet-mapping>
 	
 	<servlet>

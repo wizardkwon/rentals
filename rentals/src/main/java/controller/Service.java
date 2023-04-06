@@ -27,7 +27,7 @@ public class Service extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// 명령에 따라 서로 다른 로직을 수행하도록 함
 				String command = request.getParameter("command");
-				
+				System.out.println(command);
 				// 서로 다른 명령에 따른 Action 객체 생성 후~ 메소드 호출
 				ActionFactory factory = ActionFactory.getInstance();
 				Action action = factory.getAction(command);

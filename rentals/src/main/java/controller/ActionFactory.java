@@ -2,6 +2,8 @@ package controller;
 
 import controller.action.JoinAction;
 import controller.action.LoginAction;
+import controller.action.LogoutAction;
+import controller.action.VenueJoinAction;
 
 public class ActionFactory {
 	private ActionFactory() {} // 싱그론 패턴은 단 하나의 객체생성을 위해
@@ -11,6 +13,7 @@ public class ActionFactory {
 		return instance;
 	}
 	public Action getAction(String command) {
+		
 		Action action = null;
 		if(command.equals("join")) {
 			action = new JoinAction();
@@ -19,9 +22,9 @@ public class ActionFactory {
 		}else if(command.equals("login")) {
 			action = new LoginAction();
 		}else if(command.equals("logout")) {
-			
-		}else if(command.equals("writeBoard")) {
-			
+			action = new LogoutAction();
+		}else if(command.equals("venue")) {
+			action = new VenueJoinAction();
 		}
 		return action;
 	}

@@ -30,7 +30,7 @@ public class ClientDao {
 		this.conn = DBManager.getConnectionFromMySQL();
 
 		if (this.conn != null) {
-			String sql = "INSERT INTO client VALUES (?,?,?,?,0)";
+			String sql = "INSERT INTO client VALUES (?,?,?,?)";
 			try {
 				this.pstmt = this.conn.prepareStatement(sql);
 				this.pstmt.setString(1, client.getClientId());

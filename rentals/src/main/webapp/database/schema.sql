@@ -1,15 +1,12 @@
-
-create database rentals;
-use rentals;
 create table venue (
-venue_id int(4) PRIMARY KEY,
+venue_id varchar(10) PRIMARY KEY,
 venue_name VARCHAR(20) not null,
 date_time varchar(30) not null
 );
 
 create table vehicle (
-vehicle_id int(4) PRIMARY KEY,
-venue_id int(4) not null,
+vehicle_id varchar(10) PRIMARY KEY,
+venue_id varchar(10) not null,
 hour_rate VARCHAR(10) not null,
 date_time varchar(30) not null,
 FOREIGN KEY(venue_id) REFERENCES venue(venue_id)
@@ -23,11 +20,11 @@ date_time varchar(30) not null
 );
 
 create table booking (
-vehicle_id int(4),
-venue_id int(4),
+vehicle_id varchar(10),
+venue_id varchar(10),
 client_id VARCHAR(20),
-reg_date date not null,
-date_time date not null,
+reg_date varchar(30) not null,
+date_time varchar(30) not null,
 hour VARCHAR(10) NOT NULL,
 total_payment VARCHAR(10) NOT NULL,
 PRIMARY KEY (vehicle_id, venue_id,client_id,date_time),

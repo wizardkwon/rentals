@@ -10,6 +10,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="/resources/grid.css">
 </head>
+<jsp:include page="header"></jsp:include>
 <body>
 <% 
 SimpleDateFormat s = new SimpleDateFormat("yyyy-MM-dd");
@@ -20,11 +21,9 @@ String clientId = request.getParameter("clientId");
 String clientPassword = request.getParameter("clientPassword");
 String clientName = request.getParameter("clientName");
 %>
-<header>
-	<h1>JOCAR RENTALS</h1>
-</header>
-<nav><h3 style="text-align: center">회원 정보 입력</h3></nav>
+
 	<section>
+<h3 style="text-align: center">회원 정보 입력</h3>
 	<form method="POST" action="../service">
 	<input type="hidden" name="command" value="join">
 		<table>
@@ -53,6 +52,7 @@ String clientName = request.getParameter("clientName");
 	</form>
 	</section>
 	<script src="../resources/validation.js"></script>
-	<footer><p>우리집 강아지는 복슬 강아지~</p></footer>
+	
 </body>
+<jsp:include page="footer"></jsp:include>
 </html>

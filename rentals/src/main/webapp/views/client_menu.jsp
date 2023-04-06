@@ -9,16 +9,35 @@
 <link rel="stylesheet" href="/resources/grid.css">
 </head>
 <%
-Client client = (Client)session.getAttribute("log");
+Client client = (Client) session.getAttribute("log");
 %>
 
-<header>
-	<h1>JOCAR RENTALS</h1>
-</header>
-<nav>
-	<h3 style="text-align: center"><%=client.getClinetName() %> 님 환영합니다.</h3>
-</nav>
+<jsp:include page="header"></jsp:include>
 <body>
+	<section>
+	<div class="client_menu">
+		<ul>
+			<li><a href="car_res">단기랜트(차량예약)</a></li>
+			<li><a href="notice">공지사항</a></li>
+			<li><a href="reviews">이용후기</a></li>
+			<li><a href="my_page">MY PAGE</a></li>
+		</ul>
 
+	</div>
+		<br>
+		
+			<h3 style="text-align: center"><%=client.getClinetName()%>님
+				환영합니다.
+			</h3>
+			<form method="POST" action="../service">
+				<input type="hidden" name="command" value="logout"> <input
+					type="submit" value="로그아웃">
+			</form>
+	
+
+		<div class="user_page"></div>
+	</section>
 </body>
+<jsp:include page="footer"></jsp:include>
+
 </html>

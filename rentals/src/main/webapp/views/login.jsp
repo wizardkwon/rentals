@@ -7,13 +7,11 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="/resources/grid.css">
 </head>
+<jsp:include page="header"></jsp:include>
 <body>
-
-<header>
-	<h1>JOCAR RENTALS</h1>
-</header>
-<nav><h3 style="text-align: center">JOCAR에 로그인하세요</h3></nav>
 	<section>
+		<h1 style="text-align: center">JOCAR에 로그인하세요</h1>
+	<div class="login_box">
 		<form method="POST" action="../service">
 			<input type="hidden" name="command" value="login">
 			<table>
@@ -28,8 +26,9 @@
 			</table>
 			<input type="button" value="로그인" onclick="checkLogin(form)">
 		</form>
+	</div>
 	</section>
 	<script src="../resources/validation.js"></script>
-	<footer><p>우리집 강아지는 복슬 강아지~</p></footer>
 </body>
+<jsp:include page="footer"></jsp:include>
 </html>
