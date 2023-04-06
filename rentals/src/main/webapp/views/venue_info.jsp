@@ -1,8 +1,7 @@
 <%@page import="venue.Venue"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="venue.controller.VenueDao"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,9 +19,10 @@
 		<div class="searchBox">
 			<span style="font-size: x-large; padding-top: 5%;">위치 검색</span>
 		</div>
-			<input style="margin-top: 2%;" type="search" id="search" name="search"> 
+			<input type="search" id="search" name="search"> 
 			<input type="hidden" name="command" value="search"> 
 			<input type="button" value="검색" onclick="searchVenue()">
+				<h1>차량 위치 등록 리스트</h1>
 		<table border=1>
 			<thead>
 				<tr>
@@ -32,25 +32,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<h1>차량 위치 등록 리스트</h1>
-				<%
-				String search = request.getParameter("search");
-				System.out.println("amlsdasda: "+search);
-				if(search == null){
-					search = "";
-				}
-				VenueDao venueDao = VenueDao.getInstance();
-				ArrayList<Venue> list = venueDao.getVenueSearch(search);
-				for (int i = 0; i < list.size(); i++) {
-				%>
-				<tr>
-					<td class="VALUE"><%=list.get(i).getVenueId()%></td>
-					<td class="VALUE"><%=list.get(i).getVenueName()%></td>
-					<td class="VALUE"><%=list.get(i).getDateTime()%></td>
-				</tr>
-				<%
-				}
-				%>
+
 			</tbody>
 		</table>
 	</section>
