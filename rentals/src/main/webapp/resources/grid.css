@@ -78,10 +78,14 @@ h1, h2 {
 }
 h1{
 	font-family: fantasy;
-	margin-top: 40px;
+	margin-top: 20px;
+	margin-botttom: 20px;
 }
 h2 {
 	margin-top: 20px;
+}
+h3 {
+	margin: 20px;
 }
 
 ul {
@@ -116,12 +120,16 @@ table>thead{
 td>input {
 	margin: 20px auto;
 	outline: none;
+	width:80%;
 }
 .KEY{
 	background-color: #006ec5;
 }
 .VALUE {
-	background-color: #afebff00
+	background-color: #afebff00;
+}
+.LIST {
+	background-color: #addbff;
 }
 th, td {
 	padding: 2px 10px;

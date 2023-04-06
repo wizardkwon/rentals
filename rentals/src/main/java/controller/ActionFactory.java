@@ -3,7 +3,6 @@ package controller;
 import controller.action.JoinAction;
 import controller.action.LoginAction;
 import controller.action.LogoutAction;
-import controller.action.SearchAction;
 import controller.action.SearchVenueAction;
 import controller.action.VenueJoinAction;
 
@@ -27,9 +26,7 @@ public class ActionFactory {
 			action = new LogoutAction();
 		}else if(command.equals("venue_join")) {
 			action = new VenueJoinAction();
-		}else if(command.equals("search")) {
-			action = new SearchAction();
-		} else if(command.equals("searchvenue")) {
+		}else if(command.equals("search_venue")) {
 			action = new SearchVenueAction();
 		}
 		return action;

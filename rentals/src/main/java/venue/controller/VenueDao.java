@@ -47,33 +47,6 @@ public class VenueDao {
 		}
 	}
 	
-	public ArrayList<Venue> getVenueAll() {
-		ArrayList<Venue> list = new ArrayList<Venue>();
-		this.conn = DBManager.getConnectionFromMySQL();
-		if (this.conn != null) {
-			String sql = "SELECT * FROM venue ORDER BY venue_name";
-
-			try {
-				this.pstmt = this.conn.prepareStatement(sql);
-				this.rs = this.pstmt.executeQuery();
-				
-				while (this.rs.next()) {
-					String venueId = this.rs.getString(1);
-					String venueName = this.rs.getString(2);
-					String dateTime = this.rs.getString(3);
-
-					Venue venue = new Venue(venueId, venueName, dateTime);
-					list.add(venue);
-				}
-
-			} catch (SQLException e) {
-				e.printStackTrace();
-			} finally {
-				DBManager.close(this.conn, this.pstmt, this.rs);
-			}
-		}
-		return list;
-	}
 	
 	public ArrayList<Venue> getVenueSearch(String search) {
 		ArrayList<Venue> list = new ArrayList<Venue>();

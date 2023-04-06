@@ -23,7 +23,7 @@ String clientName = request.getParameter("clientName");
 %>
 
 	<section>
-<h3 style="text-align: center">회원 정보 입력</h3>
+	<h3 style="text-align: center">회원 정보 입력</h3>
 	<form method="POST" action="../service">
 	<input type="hidden" name="command" value="join">
 		<table class="TEST">

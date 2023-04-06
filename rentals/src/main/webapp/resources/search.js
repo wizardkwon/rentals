@@ -8,8 +8,9 @@ search.addEventListener("change", e => {
 
 function searchVenue() {
 	$("tbody").empty();
+	let count = 0;
 	$.ajax({
-		"url": `http://localhost:8081/service?command=searchvenue&keyword=${search.value}`,
+		"url": `http://localhost:8081/service?command=search_venue&keyword=${search.value}`,
 		"method": "GET",
 		"contentType": "application/x-www-form-urlencoded; charset=UTF-8",
 
@@ -19,11 +20,13 @@ function searchVenue() {
 		
 			$("tbody").append(
 				`<tr>
-					<td class="VALUE">${venue.venueId}</td>
-					<td class="VALUE">${venue.venueName}</td>
-					<td class="VALUE">${venue.dateTime}</td>
+					<td class="LIST">${++count}</td>
+					<td class="LIST">${venue.venueId}</td>
+					<td class="LIST">${venue.venueName}</td>
+					<td class="LIST">${venue.dateTime}</td>
 				</tr>`
 			)
 		});
 	});
 }
+
