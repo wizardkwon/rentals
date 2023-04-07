@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import util.DBManager;
 import vehicle.Vehicle;
@@ -24,13 +25,14 @@ public class VehicleDao {
 		return instance;
 	}
 	
-	public void joinVenue(VehicleDto vehicleDto) {
+	public void joinVehicle(VehicleDto vehicleDto) {
 		Vehicle vehicle = new Vehicle(vehicleDto);
 		this.conn = DBManager.getConnectionFromMySQL();
 		
 		if(this.conn != null) {
 			String sql = "INSERT INTO vehicle VALUES (?,?,?,?,?,?)";
 			try {
+				
 				this.pstmt = this.conn.prepareStatement(sql);
 				this.pstmt.setString(1, vehicle.getVehicleId());
 				this.pstmt.setString(2, vehicle.getVenueId());
@@ -44,9 +46,74 @@ public class VehicleDao {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}finally {
-				DBManager.close(this.conn, this.pstmt, this.rs);
+				DBManager.close(this.conn, this.pstmt);
 			}
 
 		}
+	}
+	
+	public ArrayList<Vehicle> getVehicleSearch(String search) {
+		ArrayList<Vehicle> list = new ArrayList<Vehicle>();
+		this.conn = DBManager.getConnectionFromMySQL();
+		if (this.conn != null) {
+			String sql = "SELECT * FROM vehicle_list WHERE vehicle_name like ? ORDER BY vehicle_type";
+			System.out.println("검색어: "+search);
+			try {
+				this.pstmt = this.conn.prepareStatement(sql);
+				this.pstmt.setString(1, '%'+search+'%');
+				this.rs = this.pstmt.executeQuery();
+				while (this.rs.next()) {
+					String vehicleId = this.rs.getString(1);
+					String vehicleName = this.rs.getString(4);
+					String venueId = this.rs.getString(2);
+					String venueName = this.rs.getString(3);
+					int vehicleType = this.rs.getInt(5);
+					String hourRate = this.rs.getString(6);
+					String dateTime = this.rs.getString(7);
+
+					Vehicle vehicle = new Vehicle(vehicleId, vehicleName,venueId,venueName,vehicleType,hourRate,dateTime );
+					list.add(vehicle);
+				}
+
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				DBManager.close(this.conn, this.pstmt, this.rs);
+			}
+		}
+		return list;
+	}
+	
+	public Vehicle getVehicleById(String code) {
+		Vehicle vehicle = null;
+		this.conn = DBManager.getConnectionFromMySQL();
+		if (this.conn != null) {
+			String sql = "SELECT * FROM vehicle_list WHERE vehicle_id=?";
+			
+			try {
+				this.pstmt = this.conn.prepareStatement(sql);
+				this.pstmt.setString(1, code);
+				this.rs = this.pstmt.executeQuery();
+				while(this.rs.next()) {
+					
+					String vehicleId = this.rs.getString(1);
+					String venueId = this.rs.getString(2);
+					String venueName = this.rs.getString(3);
+					String vehicleName = this.rs.getString(4);
+					int vehicleType = this.rs.getInt(5);
+					String hourRate = this.rs.getString(6);
+					String dateTime = this.rs.getString(7);
+					
+					vehicle = new Vehicle(vehicleId, vehicleName, venueId, venueName, vehicleType, hourRate,dateTime);
+					
+				}
+				
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}finally {
+				DBManager.close(this.conn, this.pstmt, this.rs);
+			}
+		}
+		return vehicle;
 	}
 }

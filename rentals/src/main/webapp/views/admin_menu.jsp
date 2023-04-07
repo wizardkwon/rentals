@@ -17,10 +17,6 @@ Client client = (Client) session.getAttribute("log");
 	<section>
 		<h2><%=client.getClinetName()%>님 환영합니다.
 		</h2>
-		<form method="POST" action="../service">
-			<input type="hidden" name="command" value="logout"> <input
-				type="submit" value="로그아웃">
-		</form>
 		<div class="admin_menu">
 			<h4>
 				<a href="vehicle_info"><img src="../resources/images/car.png"><br>차량정보</a>
@@ -31,7 +27,7 @@ Client client = (Client) session.getAttribute("log");
 			</h4>
 
 			<h4>
-				<a href="notice"><img src="../resources/images/notice.png"><br>공지사항
+				<a href="notice"><img src="../resources/images/notice.png"><br>공지사항/고객의 글
 					등록</a>
 			</h4>
 		</div>

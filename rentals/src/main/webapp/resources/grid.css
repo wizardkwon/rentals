@@ -26,10 +26,11 @@ nav {
 	justify-content: space-around;
 }
 .client_menu {
+    padding-top: 10%;
 	display: flex;
-	flex-direction: rows;
-	justify-content: space-around;
-	font-size: 20px;
+    justify-content: space-evenly;
+    font-size: x-large;
+    text-align: center;
 }
 .admin_menu {
 	align-items: baseline;
@@ -47,12 +48,12 @@ nav {
     padding-top: 50px;
 }
 .venuejoin>button{
-	 width: 115px;
-    height: 64px;
+	width: 300px;
+    height: 70px;
     background-color: #0042a5;
     color: white;
     font-size: x-large;
-    border-radius: 30%;
+   
 }
 
 section {
@@ -93,9 +94,16 @@ ul {
 	list-style: none;
 	justify-content: center;
 	font-size: x-large;
+	color:#0066ff;
+	gap: 20px;
 }
 li {
 	padding: 0 20px;
+	background-color: #ceffc5;;
+    border: solid 1px black;
+}
+li>.client_menu{
+	background-color: #ffffff;
 }
 footer>p{
 	text-align: center;
@@ -106,13 +114,25 @@ table {
 	border: 1px solid grey;
 	border-collapse : collapse;
 	margin:auto;
-	width: 55%;
+	width: 75%;
 }
+
+
 .TEST {
 	width: 500px;
 	font-family: emoji;
 	background-color: #0084db;
 	color:#ffffff;
+}
+.TEXTAREA {
+	width: 800px;
+	font-family: emoji;
+	background-color: #0084db;
+	color:#ffffff;
+}
+textarea{
+	height:300px;
+	width: 80%;
 }
 table>thead{
 	background-color: #77c0ff;

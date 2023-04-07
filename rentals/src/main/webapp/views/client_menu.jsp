@@ -16,27 +16,21 @@ Client client = (Client) session.getAttribute("log");
 <body>
 	<section>
 		<div class="client_menu">
-			<ul>
-				<li><a href="car_res">단기랜트(차량예약)</a></li>
-				<li><a href="reviews">이용후기</a></li>
-				<li><a href="my_page">MY PAGE</a></li>
-			</ul>
-			<ul>
-				<li style="color:blue;"><%=client.getClinetName()%>님
-					환영합니다.</li>
-				<li style="margin:auto;">
-					<form method="POST" action="../service">
-						<input type="hidden" name="command" value="logout"> 
-						<input type="submit" value="로그아웃">
-					</form>
-				</li>
-			</ul>
+		<h4>
+				<a href="car_res"><img src="../resources/images/res_car.png"><br>단기랜트(차량예약)</a>
+			</h4>
+
+			<h4>
+				<a href="notice"><img src="../resources/images/notices.png"><br>이용후기/공지사항</a>
+			</h4>
+
+			<h4>
+				<a href="my_page"><img src="../resources/images/my_page.png"><br>MY PAGE</a>
+			</h4>
+		
 		</div>
 		<br>
 
-
-
-		<div class="user_page"></div>
 	</section>
 </body>
 <jsp:include page="footer"></jsp:include>

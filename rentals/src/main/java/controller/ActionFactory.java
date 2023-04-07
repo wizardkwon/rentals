@@ -3,7 +3,10 @@ package controller;
 import controller.action.JoinAction;
 import controller.action.LoginAction;
 import controller.action.LogoutAction;
+import controller.action.SearchBoardAction;
+import controller.action.SearchVehicleAction;
 import controller.action.SearchVenueAction;
+import controller.action.VehicleJoinAction;
 import controller.action.VenueJoinAction;
 
 public class ActionFactory {
@@ -28,7 +31,14 @@ public class ActionFactory {
 			action = new VenueJoinAction();
 		}else if(command.equals("search_venue")) {
 			action = new SearchVenueAction();
+		}else if(command.equals("search_vehicle")) {
+			action = new SearchVehicleAction();
+		}else if(command.equals("vehicle_join")) {
+			action = new VehicleJoinAction();
+		}else if(command.equals("search_board")) {
+			action = new SearchBoardAction();
 		}
 		return action;
+		
 	}
 }

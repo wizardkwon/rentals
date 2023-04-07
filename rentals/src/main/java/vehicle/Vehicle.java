@@ -5,15 +5,17 @@ import venue.VenueDto;
 public class Vehicle {
 	private String vehicleId;
 	private String venueId;
+	private String venueName;
 	private String vehicleName;
+	private int vehicleType;
 	private String hourRate;
 	private String dateTime;
-	private int vehicleType;
 	
-	public Vehicle(String vehicleId, String venueId,String vehicleName, String hourRate, String dateTime, int vehicleType) {
+	public Vehicle(String vehicleId, String vehicleName,String venueId,String venueName,int vehicleType, String hourRate, String dateTime ) {
 		this.vehicleId = vehicleId;
-		this.venueId = venueId;
 		this.vehicleName = vehicleName;
+		this.venueId = venueId;
+		this.venueName = venueName;
 		this.hourRate = hourRate;
 		this.dateTime = dateTime;
 		this.vehicleType = vehicleType;
@@ -22,10 +24,15 @@ public class Vehicle {
 	public Vehicle(VehicleDto vehicleDto) {
 		this.vehicleId = vehicleDto.getVehicleId();
 		this.venueId = vehicleDto.getVenueId();
+		this.venueName = vehicleDto.getVenueName();
 		this.vehicleName = vehicleDto.getVehicleName();
 		this.hourRate = vehicleDto.getHourRate();
 		this.dateTime = vehicleDto.getDateTime();
 		this.vehicleType = vehicleDto.getVehicleType();
+	}
+
+	public String getVenueId() {
+		return venueId;
 	}
 
 	public String getVehicleName() {
@@ -36,8 +43,8 @@ public class Vehicle {
 		return vehicleId;
 	}
 
-	public String getVenueId() {
-		return venueId;
+	public String getVenueName() {
+		return venueName;
 	}
 
 	public String getHourRate() {

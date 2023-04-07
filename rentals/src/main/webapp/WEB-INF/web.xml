@@ -62,6 +62,52 @@
 	</servlet-mapping>
 	
 	<servlet>
+		<servlet-name>vehicle_info</servlet-name>
+		<jsp-file>/views/vehicle_info.jsp</jsp-file>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>vehicle_info</servlet-name>
+		<url-pattern>/vehicle_info</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>vehicle_detail</servlet-name>
+		<jsp-file>/views/vehicle_detail.jsp</jsp-file>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>vehicle_detail</servlet-name>
+		<url-pattern>/vehicle_detail</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>vehicle_join</servlet-name>
+		<url-pattern>/vehicle_join</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>vehicle_join</servlet-name>
+		<jsp-file>/views/vehicle_join.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>notice</servlet-name>
+		<url-pattern>/notice</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>notice</servlet-name>
+		<jsp-file>/views/notice.jsp</jsp-file>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>board_join</servlet-name>
+		<url-pattern>/board_join</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>board_join</servlet-name>
+		<jsp-file>/views/board_join.jsp</jsp-file>
+	</servlet>
+	
+	<servlet>
 		<servlet-name>client_menu</servlet-name>
 		<jsp-file>/views/client_menu.jsp</jsp-file>
 	</servlet>

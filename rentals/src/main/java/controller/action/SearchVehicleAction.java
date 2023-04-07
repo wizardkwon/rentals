@@ -12,26 +12,31 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import controller.Action;
-import venue.Venue;
-import venue.controller.VenueDao;
+import vehicle.Vehicle;
+import vehicle.controller.VehicleDao;
 
-public class SearchVenueAction implements Action {
+
+public class SearchVehicleAction implements Action{
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setCharacterEncoding("UTF-8");
 		String keyword = request.getParameter("keyword");
 
-		VenueDao dao = VenueDao.getInstance();
-		ArrayList<Venue> list = dao.getVenueSearch(keyword);
+		VehicleDao dao = VehicleDao.getInstance();
+		ArrayList<Vehicle> list = dao.getVehicleSearch(keyword);
 
 		JSONArray data = new JSONArray();
-		for(Venue venue : list) {
+		for(Vehicle vehicle : list) {
 			JSONObject obj = new JSONObject();
-			obj.put("venueId", venue.getVenueId());
-			obj.put("venueName", venue.getVenueName());
-			obj.put("dateTime", venue.getDateTime());
-			System.out.println("venue.getVenueName() : " + venue.getVenueName());
+			obj.put("vehicleId", vehicle.getVehicleId());
+			obj.put("venueId", vehicle.getVenueId());
+			obj.put("venueName", vehicle.getVenueName());
+			obj.put("vehicleName", vehicle.getVehicleName());
+			obj.put("hourRate", vehicle.getHourRate());
+			obj.put("dateTime", vehicle.getDateTime());
+			obj.put("vehicleType", vehicle.getVehicleType());
+	
 			data.put(obj);
 		}
 
@@ -43,5 +48,5 @@ public class SearchVenueAction implements Action {
 		out.print(data);
 		out.flush();
 	}
-
 }
+
