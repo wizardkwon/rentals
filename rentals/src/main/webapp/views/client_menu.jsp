@@ -12,12 +12,12 @@
 Client client = (Client) session.getAttribute("log");
 %>
 
-<jsp:include page="header"></jsp:include>
+<jsp:include page="/header"></jsp:include>
 <body>
 	<section>
 		<div class="client_menu">
 		<h4>
-				<a href="car_res"><img src="../resources/images/res_car.png"><br>단기랜트(차량예약)</a>
+				<a href="vehicle_info"><img src="../resources/images/res_car.png"><br>단기랜트(차량예약)</a>
 			</h4>
 
 			<h4>
@@ -33,6 +33,6 @@ Client client = (Client) session.getAttribute("log");
 
 	</section>
 </body>
-<jsp:include page="footer"></jsp:include>
+<jsp:include page="/footer"></jsp:include>
 
 </html>

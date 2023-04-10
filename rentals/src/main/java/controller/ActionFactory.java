@@ -1,5 +1,7 @@
 package controller;
 
+import controller.action.BoardJoinAction;
+import controller.action.BoardUpdateAction;
 import controller.action.JoinAction;
 import controller.action.LoginAction;
 import controller.action.LogoutAction;
@@ -37,6 +39,10 @@ public class ActionFactory {
 			action = new VehicleJoinAction();
 		}else if(command.equals("search_board")) {
 			action = new SearchBoardAction();
+		}else if(command.equals("board_join")) {
+			action = new BoardJoinAction();
+		}else if(command.equals("board_update")) {
+			action = new BoardUpdateAction();
 		}
 		return action;
 		

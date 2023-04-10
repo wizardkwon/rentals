@@ -12,10 +12,10 @@
 Client client = (Client) session.getAttribute("log");
 %>
 
-<jsp:include page="header"></jsp:include>
+<jsp:include page="/header"></jsp:include>
 <body>
 	<section>
-		<h2><%=client.getClinetName()%>님 환영합니다.
+		<h2><%=client.getClientName()%>님 환영합니다.
 		</h2>
 		<div class="admin_menu">
 			<h4>
@@ -34,5 +34,5 @@ Client client = (Client) session.getAttribute("log");
 	</section>
 
 </body>
-<jsp:include page="footer"></jsp:include>
+<jsp:include page="/footer"></jsp:include>
 </html>

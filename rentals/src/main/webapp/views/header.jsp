@@ -35,12 +35,23 @@ Client client = (Client) session.getAttribute("log");
 
 			<%
 			} else {
-			%>
-			<ul>
-				<li><%=client.getClinetName()%></li>
-				<li><a href="http://localhost:8081/service?command=logout">로그아웃</a></li>
-			</ul>
-			<%
+				if(client.getClientId().equals("admin")){
+					%>
+					<ul>
+						<li><a href="admin_menu">관리자메뉴</a></li>
+						<li><%=client.getClientName()%></li>
+						<li><a href="http://localhost:8081/service?command=logout">로그아웃</a></li>
+					</ul>
+					<%
+				}else {
+					%>
+					<ul>
+						<li><a href="client_menu">고객메뉴</a></li>
+						<li><%=client.getClientName()%></li>
+						<li><a href="http://localhost:8081/service?command=logout">로그아웃</a></li>
+					</ul>
+					<%
+				}
 			}
 			%>
 

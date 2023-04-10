@@ -16,8 +16,9 @@ function searchVehicle() {
 	}).done(function(response) {
 		response.forEach(vehicle => {
 			let name = "";
+			let resName= "";
+			let className = "";
 			if(vehicle.vehicleType === 1){
-			console.log(vehicle.vehicleType);
 				name = "세단";
 			}else if(vehicle.vehicleType === 2){
 				name = "경차";
@@ -26,17 +27,28 @@ function searchVehicle() {
 			}else if(vehicle.vehicleType === 4){
 				name = "외제차";
 			}
-			console.log(name);
+			if(vehicle.checkRes === "y"){
+				resName = "예약가능"
+				className = "LIST_YES"
+			}else {
+				resName = "예약불가"
+				className = "LIST_NO"
+			}
+			
+			console.log("차량명 :"+vehicle.vehicleName);
+			console.log("예약여부:"+vehicle.checkRes);
+			
 			$("tbody").append(
 				`<tr>
 					<td class="LIST">${++count}</td>
 					<td class="LIST">${name}</td>
-					<td class="LIST"><a href="vehicle_detail?vehicleId=${vehicle.vehicleId}">${vehicle.vehicleId}</a></td>
+					<td class="LIST_BTN"><a href="vehicle_detail?vehicleId=${vehicle.vehicleId}">${vehicle.vehicleId}</a></td>
 					<td class="LIST">${vehicle.vehicleName}</td>
 					<td class="LIST">${vehicle.venueId}</td>
 					<td class="LIST">${vehicle.venueName}</td>
 					<td class="LIST">${vehicle.hourRate}</td>
 					<td class="LIST">${vehicle.dateTime}</td>
+					<td class="${className}"><a href="vehicle_res?vehicleId=${vehicle.vehicleId}">${resName}</a></td>
 				</tr>`
 			)
 		});

@@ -22,10 +22,11 @@ function searchNotice() {
 			}else if(board.postType === 2){
 				name = "이용후기";
 			}
+			
 			console.log(name);
 			$("tbody").append(
 				`<tr>
-					<td class="LIST">${board.postNo}</td>
+					<td class="LIST_BTN"><a href="board_detail?postNo=${board.postNo}">${board.postNo}번 상세(클릭)</a></td>
 					<td class="LIST">${board.clientName}</td>
 					<td class="LIST">${board.postTitle}</td>
 					<td class="LIST">${board.contents}</td>

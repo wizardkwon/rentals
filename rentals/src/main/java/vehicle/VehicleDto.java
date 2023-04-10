@@ -8,8 +8,9 @@ public class VehicleDto {
 	private String hourRate;
 	private String dateTime;
 	private int vehicleType;
+	private String checkRes;
 	
-	public VehicleDto(String vehicleId, String vehicleName,String venueId,String venueName,int vehicleType,String hourRate, String dateTime ) {
+	public VehicleDto(String vehicleId, String vehicleName,String venueId,String venueName,int vehicleType,String hourRate, String dateTime, String checkRes  ) {
 		this.vehicleId = vehicleId;
 		this.venueId = venueId;
 		this.venueName = venueName;
@@ -17,6 +18,15 @@ public class VehicleDto {
 		this.hourRate = hourRate;
 		this.dateTime = dateTime;
 		this.vehicleType = vehicleType;
+		this.checkRes = checkRes;
+	}
+
+	public String getCheckRes() {
+		return checkRes;
+	}
+
+	public void setCheckRes(String checkRes) {
+		this.checkRes = checkRes;
 	}
 
 	public String getVenueName() {

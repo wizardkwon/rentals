@@ -30,7 +30,7 @@ public class VehicleDao {
 		this.conn = DBManager.getConnectionFromMySQL();
 		
 		if(this.conn != null) {
-			String sql = "INSERT INTO vehicle VALUES (?,?,?,?,?,?)";
+			String sql = "INSERT INTO vehicle VALUES (?,?,?,?,?,?,?)";
 			try {
 				
 				this.pstmt = this.conn.prepareStatement(sql);
@@ -40,6 +40,7 @@ public class VehicleDao {
 				this.pstmt.setString(4, vehicle.getHourRate());
 				this.pstmt.setString(5, vehicle.getDateTime());
 				this.pstmt.setInt(6, vehicle.getVehicleType());
+				this.pstmt.setString(7, "y");
 				
 				this.pstmt.execute();
 			} catch (SQLException e) {
@@ -57,7 +58,7 @@ public class VehicleDao {
 		this.conn = DBManager.getConnectionFromMySQL();
 		if (this.conn != null) {
 			String sql = "SELECT * FROM vehicle_list WHERE vehicle_name like ? ORDER BY vehicle_type";
-			System.out.println("검색어: "+search);
+			
 			try {
 				this.pstmt = this.conn.prepareStatement(sql);
 				this.pstmt.setString(1, '%'+search+'%');
@@ -70,8 +71,9 @@ public class VehicleDao {
 					int vehicleType = this.rs.getInt(5);
 					String hourRate = this.rs.getString(6);
 					String dateTime = this.rs.getString(7);
-
-					Vehicle vehicle = new Vehicle(vehicleId, vehicleName,venueId,venueName,vehicleType,hourRate,dateTime );
+					String checkRes = this.rs.getString(8);
+					System.out.println("checkRes: "+checkRes);
+					Vehicle vehicle = new Vehicle(vehicleId, vehicleName,venueId,venueName,vehicleType,hourRate,dateTime,checkRes );
 					list.add(vehicle);
 				}
 
@@ -103,8 +105,9 @@ public class VehicleDao {
 					int vehicleType = this.rs.getInt(5);
 					String hourRate = this.rs.getString(6);
 					String dateTime = this.rs.getString(7);
+					String checkRes = this.rs.getString(8);
 					
-					vehicle = new Vehicle(vehicleId, vehicleName, venueId, venueName, vehicleType, hourRate,dateTime);
+					vehicle = new Vehicle(vehicleId, vehicleName, venueId, venueName, vehicleType, hourRate,dateTime,checkRes);
 					
 				}
 				

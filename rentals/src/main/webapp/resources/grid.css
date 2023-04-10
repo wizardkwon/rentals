@@ -144,12 +144,28 @@ td>input {
 }
 .KEY{
 	background-color: #006ec5;
+	color: white;
+}
+.BOARD_TITLE{
+	background-color: #ffffff;
+	width: 600px;
 }
 .VALUE {
 	background-color: #afebff00;
 }
 .LIST {
 	background-color: #addbff;
+}
+.LIST_YES{
+	background-color: #155ef5;
+	color : yellow;
+}
+.LIST_NO{
+	background-color: red;
+	color : yellow;
+}
+.LIST_BTN{
+	background-color: #f7ffa5fa;
 }
 th, td {
 	padding: 2px 10px;

@@ -77,6 +77,15 @@
 	</servlet>
 
 	<servlet-mapping>
+		<servlet-name>board_detail</servlet-name>
+		<url-pattern>/board_detail</url-pattern>
+	</servlet-mapping>
+		<servlet>
+		<servlet-name>board_detail</servlet-name>
+		<jsp-file>/views/board_detail.jsp</jsp-file>
+	</servlet>
+
+	<servlet-mapping>
 		<servlet-name>vehicle_detail</servlet-name>
 		<url-pattern>/vehicle_detail</url-pattern>
 	</servlet-mapping>
@@ -118,6 +127,16 @@
 	</servlet-mapping>
 	
 	<servlet>
+		<servlet-name>my_page</servlet-name>
+		<jsp-file>/views/my_page.jsp</jsp-file>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>my_page</servlet-name>
+		<url-pattern>/my_page</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
 		<servlet-name>admin_menu</servlet-name>
 		<jsp-file>/views/admin_menu.jsp</jsp-file>
 	</servlet>
@@ -125,6 +144,16 @@
 	<servlet-mapping>
 		<servlet-name>admin_menu</servlet-name>
 		<url-pattern>/admin_menu</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>vehicle_res</servlet-name>
+		<jsp-file>/views/vehicle_res.jsp</jsp-file>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>vehicle_res</servlet-name>
+		<url-pattern>/vehicle_res</url-pattern>
 	</servlet-mapping>
 	
 	<servlet>

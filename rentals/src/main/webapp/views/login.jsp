@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="/resources/grid.css">
 </head>
-<jsp:include page="header"></jsp:include>
+<jsp:include page="/header"></jsp:include>
 <body>
 	<section>
 		<h1 style="text-align: center">JOCAR에 로그인하세요</h1>
@@ -30,5 +30,5 @@
 	</section>
 	<script src="../resources/client_login.js"></script>
 </body>
-<jsp:include page="footer"></jsp:include>
+<jsp:include page="/footer"></jsp:include>
 </html>

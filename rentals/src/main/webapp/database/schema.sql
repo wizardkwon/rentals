@@ -41,3 +41,31 @@ contents VARCHAR(5000) NOT NULL,
 date_time varchar(30) not null,
 FOREIGN KEY(client_id) REFERENCES `client`(client_id)
 );
+
+
+Create view notice_list AS
+select 
+post_no,
+client_id,
+(select client_name from `client` where client_id = b.client_id) as client_name , 
+post_title,
+contents,
+ date_time,
+ post_type
+ from board b
+ order by post_type;
+ 
+ create VIEW vehicle_list AS
+select 
+vehicle_id , 
+venue_id, 
+(select venue_name from venue where v.venue_id = venue_id) as venue_name,
+ vehicle_name, 
+ vehicle_type, 
+ hour_rate, 
+ date_time,
+ check_res
+ from vehicle v;
+ 
+ 
+ 

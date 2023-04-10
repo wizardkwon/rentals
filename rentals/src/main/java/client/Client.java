@@ -7,13 +7,13 @@ import client.controller.ClientDao;
 public class Client {
 	private String clientId;
 	private String clientPassword;
-	private String clinetName;
+	private String clientName;
 	private String dateTime;
 	
 	public Client(String clientId, String clientPassword, String clientName, String dateTime) {
 		this.clientId = clientId;
 		this.clientPassword = clientPassword;
-		this.clinetName = clientName;
+		this.clientName = clientName;
 		this.dateTime = dateTime;
 		
 	}
@@ -21,7 +21,7 @@ public class Client {
 	public Client(ClientDto clientDto) {
 		this.clientId = clientDto.getClientId();
 		this.clientPassword = clientDto.getClientPassword();
-		this.clinetName = clientDto.getClinetName();
+		this.clientName = clientDto.getClientName();
 		this.dateTime = clientDto.getDateTime();
 	
 	}
@@ -30,8 +30,8 @@ public class Client {
 		return clientId;
 	}
 
-	public String getClinetName() {
-		return clinetName;
+	public String getClientName() {
+		return clientName;
 	}
 
 	public String getDateTime() {

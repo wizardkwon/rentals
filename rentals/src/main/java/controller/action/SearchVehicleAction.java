@@ -36,6 +36,7 @@ public class SearchVehicleAction implements Action{
 			obj.put("hourRate", vehicle.getHourRate());
 			obj.put("dateTime", vehicle.getDateTime());
 			obj.put("vehicleType", vehicle.getVehicleType());
+			obj.put("checkRes", vehicle.getCheckRes());
 	
 			data.put(obj);
 		}

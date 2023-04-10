@@ -13,7 +13,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="/resources/grid.css">
 </head>
-<jsp:include page="header"></jsp:include>
+<jsp:include page="/header"></jsp:include>
 <body>
 <% 
 SimpleDateFormat s = new SimpleDateFormat("yyyy-MM-dd");
@@ -83,5 +83,5 @@ String vehicleType = request.getParameter("vehicleType");
 	</section>
 		<script src="../resources/vehicle_join.js"></script>
 </body>
-<jsp:include page="footer"></jsp:include>
+<jsp:include page="/footer"></jsp:include>
 </html>

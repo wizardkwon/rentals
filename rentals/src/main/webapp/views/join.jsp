@@ -10,7 +10,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="/resources/grid.css">
 </head>
-<jsp:include page="header"></jsp:include>
+<jsp:include page="/header"></jsp:include>
 <body>
 <% 
 SimpleDateFormat s = new SimpleDateFormat("yyyy-MM-dd");
@@ -54,5 +54,5 @@ String clientName = request.getParameter("clientName");
 	<script src="../resources/validation.js"></script>
 	
 </body>
-<jsp:include page="footer"></jsp:include>
+<jsp:include page="/footer"></jsp:include>
 </html>

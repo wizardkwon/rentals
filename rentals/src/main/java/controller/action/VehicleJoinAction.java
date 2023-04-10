@@ -20,7 +20,7 @@ public class VehicleJoinAction implements Action{
 		
 		String vehicleId = request.getParameter("vehicleId");
 		String venueId = request.getParameter("venueId");
-		
+		String checkRes = request.getParameter("checkRes");
 		String venueName = request.getParameter("venueName");
 		String vehicleName = request.getParameter("vehicleName");
 		String hourRate = request.getParameter("hourRate");
@@ -28,7 +28,7 @@ public class VehicleJoinAction implements Action{
 		int vehicleType = Integer.parseInt(request.getParameter("vehicleType"));
 		
 		VehicleDao vehicleDao = VehicleDao.getInstance();
-		VehicleDto vehicleDto = new VehicleDto(vehicleId,vehicleName,venueId,venueName,vehicleType,hourRate,dateTime);
+		VehicleDto vehicleDto = new VehicleDto(vehicleId,vehicleName,venueId,venueName,vehicleType,hourRate,dateTime,checkRes);
 		vehicleDao.joinVehicle(vehicleDto);
 		
 		response.sendRedirect("vehicle_info");

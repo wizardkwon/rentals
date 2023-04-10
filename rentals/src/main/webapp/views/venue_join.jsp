@@ -9,7 +9,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="/resources/grid.css">
 </head>
-<jsp:include page="header"></jsp:include>
+<jsp:include page="/header"></jsp:include>
 <body>
 
 
@@ -47,5 +47,5 @@ String venueName = request.getParameter("venueName");
 	</section>
 	<script src="../resources/venue_join.js"></script>
 </body>
-<jsp:include page="footer"></jsp:include>
+<jsp:include page="/footer"></jsp:include>
 </html>

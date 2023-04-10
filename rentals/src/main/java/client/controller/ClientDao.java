@@ -35,7 +35,7 @@ public class ClientDao {
 				this.pstmt = this.conn.prepareStatement(sql);
 				this.pstmt.setString(1, client.getClientId());
 				this.pstmt.setString(2, client.getClientPassword());
-				this.pstmt.setString(3, client.getClinetName());
+				this.pstmt.setString(3, client.getClientName());
 				this.pstmt.setString(4, client.getDateTime());
 
 				this.pstmt.execute();

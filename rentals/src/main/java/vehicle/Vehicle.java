@@ -10,8 +10,9 @@ public class Vehicle {
 	private int vehicleType;
 	private String hourRate;
 	private String dateTime;
+	private String checkRes;
 	
-	public Vehicle(String vehicleId, String vehicleName,String venueId,String venueName,int vehicleType, String hourRate, String dateTime ) {
+	public Vehicle(String vehicleId, String vehicleName,String venueId,String venueName,int vehicleType, String hourRate, String dateTime,String checkRes ) {
 		this.vehicleId = vehicleId;
 		this.vehicleName = vehicleName;
 		this.venueId = venueId;
@@ -19,6 +20,7 @@ public class Vehicle {
 		this.hourRate = hourRate;
 		this.dateTime = dateTime;
 		this.vehicleType = vehicleType;
+		this.checkRes = checkRes;
 	}
 	
 	public Vehicle(VehicleDto vehicleDto) {
@@ -29,6 +31,11 @@ public class Vehicle {
 		this.hourRate = vehicleDto.getHourRate();
 		this.dateTime = vehicleDto.getDateTime();
 		this.vehicleType = vehicleDto.getVehicleType();
+		this.checkRes = vehicleDto.getCheckRes();
+	}
+
+	public String getCheckRes() {
+		return checkRes;
 	}
 
 	public String getVenueId() {

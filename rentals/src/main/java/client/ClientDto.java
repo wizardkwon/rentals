@@ -1,20 +1,26 @@
 package client;
 
-import java.sql.Timestamp;
 
 public class ClientDto {
 	private String clientId;
 	private String clientPassword;
-	private String clinetName;
+	private String clientName;
 	private String dateTime;
 	
 	
 	public ClientDto(String clientId, String clientPassword ,String clientName, String dateTime) {
 		this.clientId = clientId;
 		this.clientPassword = clientPassword;
-		this.clinetName = clientName;
+		this.clientName = clientName;
 		this.dateTime = dateTime;
 		
+	}
+	
+	public ClientDto() {
+		
+	}
+public ClientDto(String clientName) {
+		this.clientName = clientName;
 	}
 
 	public String getClientId() {
@@ -32,12 +38,12 @@ public class ClientDto {
 		this.clientPassword = clientPassword;
 	}
 
-	public String getClinetName() {
-		return clinetName;
+	public String getClientName() {
+		return clientName;
 	}
 
-	public void setClinetName(String clinetName) {
-		this.clinetName = clinetName;
+	public void setClinetName(String clientName) {
+		this.clientName = clientName;
 	}
 
 	public String getDateTime() {

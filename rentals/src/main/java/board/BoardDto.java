@@ -26,6 +26,15 @@ public class BoardDto {
 		this.dateTime = dateTime;
 		this.postType = postType;
 	}
+	
+	public BoardDto(int postNo, String postTitle,String contents) {
+		this.postNo = postNo;
+		this.postTitle = postTitle;
+		this.contents = contents;
+	
+	}
+	
+
 	public int getPostNo() {
 		return postNo;
 	}

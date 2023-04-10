@@ -14,13 +14,13 @@ Client client = (Client) session.getAttribute("log");
 VenueDao venue = VenueDao.getInstance();
 ArrayList<Venue> list = venue.getVenueSearch("");
 %>
-<jsp:include page="header"></jsp:include>
+<jsp:include page="/header"></jsp:include>
 <body>
 
 	<section>
 	<%if(client != null){%>
-		<h2><%=client.getClinetName()%>님 환영합니다.</h2>
-		<%if(client.getClinetName().equals("관리자")){ %>
+		<h2><%=client.getClientName()%>님 환영합니다.</h2>
+		<%if(client.getClientName().equals("관리자")){ %>
 		<div class="venuejoin">
 			<button type="button" onclick="location.href='vehicle_join'">차량등록</button>
 			<button type="button" onclick="location.href='admin_menu'">관리자 page</button>
@@ -51,8 +51,9 @@ ArrayList<Venue> list = venue.getVenueSearch("");
 					<td class="KEY">차량명</td>
 					<td class="KEY">위치번호</td>
 					<td class="KEY">차량위치명</td>
-					<td class="KEY">시간당 가격</td>
+					<td class="KEY">시간당 가격(원)</td>
 					<td class="KEY">등록일자</td>
+					<td class="KEY">예약가능여부(y/n)</td>
 				</tr>
 			</thead>
 			<tbody>
@@ -62,5 +63,5 @@ ArrayList<Venue> list = venue.getVenueSearch("");
 	</section>
 	<script src="../resources/searchVehicle.js"></script>
 </body>
-<jsp:include page="footer"></jsp:include>
+<jsp:include page="/footer"></jsp:include>
 </html>

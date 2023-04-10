@@ -15,16 +15,16 @@ Client client = (Client) session.getAttribute("log");
 BoardDao boardDao = BoardDao.getInstance();
 ArrayList<Board> list = boardDao.getBoardSearch("");
 %>
-<jsp:include page="header"></jsp:include>
+<jsp:include page="/header"></jsp:include>
 <body>
 	<section>
 		<%
 		if (client != null) {
 		%>
-		<h2><%=client.getClinetName()%>님 환영합니다.
+		<h2><%=client.getClientName()%>님 환영합니다.
 		</h2>
 		<%
-		if (client.getClinetName().equals("관리자")) {
+		if (client.getClientName().equals("관리자")) {
 		%>
 		<div class="venuejoin">
 			<button type="button" onclick="location.href='board_join'">게시글 등록</button>
@@ -32,19 +32,18 @@ ArrayList<Board> list = boardDao.getBoardSearch("");
 				page</button>
 		</div>
 		<%
+		}else {
+			%>
+			<div class="venuejoin">
+				<button type="button" onclick="location.href='board_join'">게시글 등록</button>
+				<button type="button" onclick="location.href='client_menu'">고객
+					page</button>
+			</div>
+			<%
+			}
 		}
-		%>
-		<%
-		} else {
-		%>
-		<div class="venuejoin">
-			<button type="button" onclick="location.href='board_join'">게시글 등록</button>
-			<button type="button" onclick="location.href='client_menu'">고객
-				page</button>
-		</div>
-		<%
-		}
-		%>
+			%>
+	
 		<h1>공지사항 / 이용후기</h1>
 		<h2>글 검색</h2>
 		<div style="text-align: center;">
@@ -71,5 +70,5 @@ ArrayList<Board> list = boardDao.getBoardSearch("");
 	</section>
 	<script src="../resources/searchNotice.js"></script>
 </body>
-<jsp:include page="footer"></jsp:include>
+<jsp:include page="/footer"></jsp:include>
 </html>

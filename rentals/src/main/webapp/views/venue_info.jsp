@@ -12,11 +12,11 @@
 <%
 Client client = (Client) session.getAttribute("log");
 %>
-<jsp:include page="header"></jsp:include>
+<jsp:include page="/header"></jsp:include>
 <body>
 
 	<section>
-	<h2><%=client.getClinetName()%>님 환영합니다.
+	<h2><%=client.getClientName()%>님 환영합니다.
 		<div class="venuejoin">
 			<button type="button" onclick="location.href='venue_join'">위치등록</button>
 			<button type="button" onclick="location.href='admin_menu'">홈으로</button>
@@ -50,5 +50,5 @@ Client client = (Client) session.getAttribute("log");
 	</section>
 	<script src="../resources/search.js"></script>
 </body>
-<jsp:include page="footer"></jsp:include>
+<jsp:include page="/footer"></jsp:include>
 </html>
