@@ -9,7 +9,7 @@ public class Booking {
 	private String dateTime;
 	private String hour;
 	private String totalPayment;
-	
+	 
 	public Booking(String vehicleId,String venueId,String clientId,String startDate,String endDate,String dateTime,String hour ,String totalPayment) {
 		this.vehicleId = vehicleId;
 		this.venueId = venueId;
