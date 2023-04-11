@@ -42,7 +42,7 @@ function searchVehicle() {
 				`<tr>
 					<td class="LIST">${++count}</td>
 					<td class="LIST">${name}</td>
-					<td class="LIST_BTN"><a href="vehicle_detail?vehicleId=${vehicle.vehicleId}">${vehicle.vehicleId}</a></td>
+					<td class="LIST_BTN">${vehicle.vehicleId}</td>
 					<td class="LIST">${vehicle.vehicleName}</td>
 					<td class="LIST">${vehicle.venueId}</td>
 					<td class="LIST">${vehicle.venueName}</td>
